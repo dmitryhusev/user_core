@@ -41,6 +41,5 @@ jobs:
       with:
         name: upload traces
         path: ./traces
-      with:
         name: upload allure
         path: ./allure_report
