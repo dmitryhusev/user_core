@@ -11,8 +11,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: install jave
-      run: apt install default-jre
+    - name: install java
+      run: sudo apt-get install default-jre
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
