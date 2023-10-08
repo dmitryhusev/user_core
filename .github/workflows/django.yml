@@ -26,7 +26,7 @@ jobs:
     - name: Run server 
       run: gunicorn user_core.wsgi --daemon
     - name: Install playwright
-      run: playwright install-deps chromium
+      run: playwright install chromium
     - name: Run Tests
       run: |
         pytest
