@@ -1,5 +1,5 @@
 import re
-from playwright.sync_api import Page, expect
+from playwright.sync_api import expect
 from faker import Faker
 
 
