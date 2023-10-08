@@ -26,7 +26,12 @@ jobs:
     - name: Run server 
       run: gunicorn user_core.wsgi --daemon
     - name: Install playwright
-      run: playwright install 
+      run: playwright install-deps chromium
     - name: Run Tests
       run: |
-        pytest -sv
+        pytest
+    - name: Upload traces
+        uses: actions/upload-artifact@v3
+          with:
+            name: upload traces
+            path: ./traces

@@ -2,15 +2,14 @@ import re
 from playwright.sync_api import Page, expect
 from faker import Faker
 
+
 url = "http:localhost:8000/accounts/signup"
 
-def test_has_title(page: Page):
+def test_has_title(page):
     page.goto(url)
-
-    # Expect a title "to contain" a substring.
     expect(page).to_have_title(re.compile("Sign up"))
 
-def test_get_started_link(page: Page):
+def test_sign_up(page):
     fake = Faker()
     password = fake.password()
     page.goto(url)
