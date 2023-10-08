@@ -1,1 +1,1 @@
-[![Django CI](https://github.com/dmitryhusev/user_core/actions/workflows/django.yml/badge.svg?branch=master)](https://github.com/dmitryhusev/user_core/actions/workflows/django.yml)
+[![Django CI](https://github.com/dmitryhusev/user_core/actions/workflows/django.yml/badge.svg?branch=master&event=workflow_run)](https://github.com/dmitryhusev/user_core/actions/workflows/django.yml)
