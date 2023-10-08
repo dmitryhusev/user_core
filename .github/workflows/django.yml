@@ -39,10 +39,10 @@ jobs:
     - name: Upload traces
       uses: actions/upload-artifact@v3
       with:
-        name: upload traces
+        name: upload_traces
         path: ./traces
     - name: Upload allure
       uses: actions/upload-artifact@v3
       with:
-        name: upload allure
+        name: upload_allure
         path: ./allure_report
