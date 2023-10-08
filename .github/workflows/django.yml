@@ -24,7 +24,7 @@ jobs:
     - name: Migrate
       run: python manage.py migrate
     - name: Run server 
-      run: python manage.py runserver
+      run: gunicorn user_core.wsgi
     - name: Install playwright
       run: playwright install 
     - name: Run Tests
