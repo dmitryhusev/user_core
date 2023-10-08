@@ -41,5 +41,8 @@ jobs:
       with:
         name: upload traces
         path: ./traces
+    - name: Upload allure
+      uses: actions/upload-artifact@v3
+      with:
         name: upload allure
         path: ./allure_report
