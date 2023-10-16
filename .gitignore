@@ -8,3 +8,4 @@ __pycache__/
 traces/
 allure_results/
 allure_report/
+.env*
