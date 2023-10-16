@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: print vars
-      run: "++++++++++++++++++++ echo $DJANGO_ALLOWED_HOSTS"
+      run: echo "++++++++++++++++++++ ${{vars.DJANGO_ALLOWED_HOSTS}}"
     - uses: actions/checkout@v3
     - name: install java
       run: sudo apt-get install default-jre
