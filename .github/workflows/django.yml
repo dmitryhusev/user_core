@@ -8,8 +8,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: print vars
-      run: echo "++++++++++++++++++++ ${{vars.DJANGO_ALLOWED_HOSTS}}"
     - uses: actions/checkout@v3
     - name: install java
       run: sudo apt-get install default-jre
@@ -22,13 +20,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Make migrations
-      env: 
-        DJANGO_ALLOWED_HOSTS: ${{ vars.DJANGO_ALLOWED_HOSTS }}
       run: python manage.py makemigrations
     - name: Migrate
+      env: 
+        DJANGO_ALLOWED_HOSTS: ${{ vars.DJANGO_ALLOWED_HOSTS }}
       run: python manage.py migrate
     - name: Run server 
       run: gunicorn user_core.wsgi --daemon
+  test:
     - name: Install playwright
       run: playwright install chromium
     - name: Run Tests
