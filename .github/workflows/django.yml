@@ -6,12 +6,8 @@ on:
    
 env:
   DJANGO_ALLOWED_HOSTS: ${{ vars.DJANGO_ALLOWED_HOSTS }}
-  SQL_ENGINE: django.db.backends.sqlite
-  SQL_DATABASE: postgres
-  SQL_USER: postgres
-  SQL_PASSWORD: postgres
-  SQL_HOST: localhost
-  SQL_PORT: 5432
+  SQL_ENGINE: django.db.backends.sqlite3
+  SQL_DATABASE: test.db
 
 jobs:
   build:
