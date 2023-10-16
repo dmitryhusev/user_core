@@ -22,6 +22,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Make migrations
+      env: 
+        DJANGO_ALLOWED_HOSTS: ${{vars.DJANGO_ALLOWED_HOSTS}}
       run: python manage.py makemigrations
     - name: Migrate
       run: python manage.py migrate
