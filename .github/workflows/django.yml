@@ -3,13 +3,14 @@ name: Django CI
 on:
   push:
     branches: [ "master" ]
+   
+env:
+  DJANGO_ALLOWED_HOSTS: ${{ vars.DJANGO_ALLOWED_HOSTS }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - env:
-        DJANGO_ALLOWED_HOSTS: ${{ vars.DJANGO_ALLOWED_HOSTS }}
 
     - uses: actions/checkout@v3
     - name: install java
