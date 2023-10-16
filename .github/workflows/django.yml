@@ -28,6 +28,7 @@ jobs:
     - name: Run server 
       run: gunicorn user_core.wsgi --daemon
   test:
+    steps:
     - name: Install playwright
       run: playwright install chromium
     - name: Run Tests
