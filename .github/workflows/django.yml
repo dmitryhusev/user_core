@@ -8,6 +8,7 @@ env:
   DJANGO_ALLOWED_HOSTS: ${{ vars.DJANGO_ALLOWED_HOSTS }}
   SQL_ENGINE: django.db.backends.sqlite3
   SQL_DATABASE: test.db
+  SECRET_KEY: ujewoirj324849r89ufierjjfwjerkfn2348u892374098erhfjnewrjvn32487893
 
 jobs:
   build:
