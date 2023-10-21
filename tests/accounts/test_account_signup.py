@@ -3,7 +3,7 @@ from playwright.sync_api import expect
 from faker import Faker
 
 
-url = "http:localhost:8000/accounts/signup"
+url = "http:localhost:8001/accounts/signup"
 
 def test_has_title(page):
     page.goto(url)
