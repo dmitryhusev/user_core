@@ -26,7 +26,7 @@ class UserManager(BaseUserManager):
             email,
             password=password,
         )
-        user.is_staff = True
+        # user.is_staff = True
         user.is_superuser = True
         user.save(using=self._db)
         return user
@@ -39,12 +39,16 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=50, blank=True, null=True)
     last_name = models.CharField(max_length=50, blank=True, null=True)
     email = models.EmailField(max_length=100, unique=True)
-    active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    # is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = UserManager()
+
+    @property
+    def is_staff(self):
+        return self.is_superuser
 
     username = None
 

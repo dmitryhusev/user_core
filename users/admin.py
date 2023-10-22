@@ -6,9 +6,9 @@ from django.contrib.auth.admin import UserAdmin
 
 class CustomUserAdmin(UserAdmin):
     model = CustomUser
-    list_display = ("id", "email", "first_name", "last_name", "is_staff")
+    list_display = ("email", "id", "first_name", "last_name", "is_superuser", "is_active")
     list_filter = ()
-    ordering = ("id",)
+    ordering = ("-id",)
     fieldsets = ()
     add_fieldsets = (
             (

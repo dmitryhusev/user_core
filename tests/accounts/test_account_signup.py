@@ -1,9 +1,11 @@
 import re
 from playwright.sync_api import expect
 from faker import Faker
+import os
 
 
-url = "http:localhost:8000/accounts/signup"
+PORT = 8000 if os.getenv('CI') else 8001
+url = f"http:localhost:{PORT}/accounts/signup"
 
 def test_has_title(page):
     page.goto(url)
